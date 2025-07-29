@@ -16,6 +16,7 @@ const Navbar = () => {
           <Link to="/events" className="nav-link">Events</Link>
           <Link to="/about" className="nav-link">About</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
+          <Link to="/create-event" className="nav-link">Create Event</Link>
         </div>
         
         <div className="navbar-auth">

@@ -1,10 +1,12 @@
 import { Calendar, MapPin, Users, DollarSign } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import techConference from '../../assets/tech-conference.jpg';
 import musicConcert from '../../assets/music-concert.jpg';
 import artWorkshop from '../../assets/art-workshop.jpg';
 import './Events.css';
 
 const Events = () => {
+  const navigate = useNavigate();
   const events = [
     {
       id: 1,
@@ -91,7 +93,12 @@ const Events = () => {
         
         <div className="events-grid">
           {events.map((event) => (
-            <div key={event.id} className="event-card">
+            <div 
+              key={event.id} 
+              className="event-card"
+              onClick={() => navigate(`/events/${event.id}`)}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="event-image">
                 <img src={event.image} alt={event.title} />
                 <div className="event-category">{event.category}</div>
